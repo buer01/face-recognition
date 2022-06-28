@@ -5,7 +5,7 @@ from PIL import Image
 from facenet import Facenet
 
 model = Facenet()
-
+threshhold = "0.71"
 def recognition_face(image):
     result = []
     image_target = Image.open(image)
@@ -16,12 +16,17 @@ def recognition_face(image):
         probability = model.detect_image(image_target, image2)
         result.append(probability)
     for i in result:
-        print(i,end=" ")
-    print("*"*16)
-    probability_max = max(result)
-    index = result.index(probability_max)
-    print(probability_max)
-    print(db_list[index]["id"])
+        print(i[0],end=" ")
+    print("")
+    probability_min = min(result)
+    index = result.index(probability_min)
+    print(probability_min)
+    if(probability_min<threshhold):
+        print(db_list[index]["id"])
+        return db_list[index]["id"]
+    else:
+        print("not found")
+        return 0
 
 if __name__ =="__main__":
     path = input("img_path")
