@@ -5,7 +5,7 @@ from PIL import Image
 from facenet import Facenet
 
 model = Facenet()
-threshhold = 0.71
+threshhold = 1.16000
 def recognition_face(image):
     result = []
     image_target = Image.open(image)
