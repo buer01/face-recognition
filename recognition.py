@@ -24,8 +24,8 @@ def recognition_face(image):
     print(db_list[index]["id"])
 
 if __name__ =="__main__":
-    # path = input("img_path")
-    recognition_face("./img/1_001.jpg")
+    path = input("img_path")
+    recognition_face(path)
 # if __name__ == "__main__":
 #     model = Facenet()
 #
