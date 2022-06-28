@@ -3,7 +3,7 @@ import os
 import time
 
 import sys
-sys.path.append("home/buerctf/buerctf/face_recognition_buer")
+sys.path.append(os.path.abspath(os.path.join(os.getcwd(), "..")))
 
 from flask import Flask, request, render_template
 from recognition import rec
