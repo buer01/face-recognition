@@ -28,7 +28,7 @@ class rec():
             return db_list[index]["id"]
         else:
             print("not found")
-            return 0
+            return "fail"
 
 # if __name__ =="__main__":
 #     path = input("img_path")

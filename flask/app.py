@@ -46,7 +46,7 @@ def register():
     with open("static/img/db.json","w") as f_new:
         json.dump(content,f_new)
 
-    return 1
+    return "success"
 
 
 @app.route('/recognition', methods=['POST'])
