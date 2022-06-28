@@ -5,8 +5,8 @@ from PIL import Image
 from facenet import Facenet
 class rec():
     def __init__(self):
-        model = Facenet()
-    threshold = 1.16000
+        self.model = Facenet()
+        self.threshold = 1.16000
 
     def recognition_face(self,image):
         result = []
