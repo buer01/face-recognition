@@ -30,7 +30,7 @@ def register():
     suffix = '.' + img.filename.split('.')[-1]  # 获取文件后缀名
     # basedir = os.path.abspath(os.path.dirname(__file__))  # 获取当前文件路径
     save_name = str(int(time.time())) + suffix
-    photo = "../img/db/" + save_name  # 拼接相对路径
+    photo = "static/img/db/" + save_name  # 拼接相对路径
     img_path = photo  # 拼接图片完整保存路径,时间戳命名文件防止重复
     img.save(img_path)  # 保存图片
     print(img_path)
@@ -39,11 +39,11 @@ def register():
     id = request.form.get('stuid', '')
     print(id)
 
-    with open("../img/db.json") as f:
+    with open("static/img/db.json") as f:
         content = json.load(f)
     dit = {"id":id,"path":save_name}
     content.append(dit)
-    with open("../img/db.json","w") as f_new:
+    with open("static/img/db.json","w") as f_new:
         json.dump(content,f_new)
 
     return 1
@@ -56,7 +56,7 @@ def recognition():
     suffix = '.' + img.filename.split('.')[-1]  # 获取文件后缀名
     # basedir = os.path.abspath(os.path.dirname(__file__))  # 获取当前文件路径
     save_name = str(int(time.time())) + suffix
-    photo = "../img/temp/" + save_name  # 拼接相对路径
+    photo = "static/img/temp/" + save_name  # 拼接相对路径
     img_path = photo  # 拼接图片完整保存路径,时间戳命名文件防止重复
     img.save(img_path)  # 保存图片
     print(img_path)

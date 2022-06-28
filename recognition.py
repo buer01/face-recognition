@@ -11,7 +11,7 @@ class rec():
     def recognition_face(self,image):
         result = []
         image_target = Image.open(image)
-        with open("./img/db.json") as f:
+        with open("static/img/db.json") as f:
             db_list = json.load(f)
         for db_dict in db_list:
             image2 = Image.open(db_dict['path'])
