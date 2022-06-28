@@ -2,10 +2,12 @@ import json
 import os
 import time
 
+import sys
+sys.path.append("home/buerctf/buerctf/face_recognition_buer")
+
 from flask import Flask, request, render_template
 from recognition import rec
-import sys
-print(sys.path)
+
 
 app = Flask(__name__)
 rec = rec()
