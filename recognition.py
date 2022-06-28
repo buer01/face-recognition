@@ -3,34 +3,36 @@ import json
 from PIL import Image
 
 from facenet import Facenet
+class rec():
+    def __init__(self):
+        model = Facenet()
+    threshold = 1.16000
 
-model = Facenet()
-threshhold = 1.16000
-def recognition_face(image):
-    result = []
-    image_target = Image.open(image)
-    with open("./img/db.json") as f:
-        db_list = json.load(f)
-    for db_dict in db_list:
-        image2 = Image.open(db_dict['path'])
-        probability = model.detect_image(image_target, image2)
-        result.append(probability)
-    for i in result:
-        print(i[0],end=" ")
-    print("")
-    probability_min = min(result)
-    index = result.index(probability_min)
-    print(probability_min)
-    if(probability_min<threshhold):
-        print(db_list[index]["id"])
-        return db_list[index]["id"]
-    else:
-        print("not found")
-        return 0
+    def recognition_face(self,image):
+        result = []
+        image_target = Image.open(image)
+        with open("./img/db.json") as f:
+            db_list = json.load(f)
+        for db_dict in db_list:
+            image2 = Image.open(db_dict['path'])
+            probability = self.model.detect_image(image_target, image2)
+            result.append(probability)
+        for i in result:
+            print(i[0],end=" ")
+        print("")
+        probability_min = min(result)
+        index = result.index(probability_min)
+        print(probability_min)
+        if(probability_min<self.threshold):
+            print(db_list[index]["id"])
+            return db_list[index]["id"]
+        else:
+            print("not found")
+            return 0
 
-if __name__ =="__main__":
-    path = input("img_path")
-    recognition_face(path)
+# if __name__ =="__main__":
+#     path = input("img_path")
+#     recognition_face(path)
 # if __name__ == "__main__":
 #     model = Facenet()
 #

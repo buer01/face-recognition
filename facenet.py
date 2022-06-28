@@ -12,6 +12,7 @@ from utils.utils import preprocess_input, resize_image, show_config
 #   model_path和backbone需要修改！
 #--------------------------------------------#
 class Facenet(object):
+    dev = torch.cuda.is_available()
     _defaults = {
         #--------------------------------------------------------------------------#
         #   使用自己训练好的模型进行预测要修改model_path，指向logs文件夹下的权值文件
@@ -35,7 +36,7 @@ class Facenet(object):
         #   是否使用Cuda
         #   没有GPU可以设置成False
         #-------------------------------------------#
-        "cuda"              : False,
+        "cuda"              : dev,
     }
 
     @classmethod
