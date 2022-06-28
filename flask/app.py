@@ -3,7 +3,7 @@ import os
 import time
 
 import sys
-
+sys.path.append("..")
 
 from flask import Flask, request, render_template
 from recognition import rec
@@ -65,5 +65,4 @@ def recognition():
     return result
 
 if __name__ == '__main__':
-    sys.path.append("home/buerctf/buerctf/face_recognition_buer")
     app.run()
