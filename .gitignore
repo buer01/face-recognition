@@ -6,8 +6,6 @@ datasets/
 Medical_Datasets/
 lfw/
 logs/
-model_data/
-
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
