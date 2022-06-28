@@ -23,6 +23,9 @@ def recognition_face(image):
     print(probability_max)
     print(db_list[index]["id"])
 
+if __name__ =="__main__":
+    path = input("img_path")
+    recognition_face(path)
 # if __name__ == "__main__":
 #     model = Facenet()
 #
