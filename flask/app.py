@@ -13,12 +13,12 @@ app = Flask(__name__)
 rec = rec()
 
 @app.route('/reg')
-def hello_world():  # put application's code here
+def reg():  # put application's code here
     # return 'Hello World!'
     return render_template("reg.html")
 
 @app.route('/up')
-def hello_world():  # put application's code here
+def up():  # put application's code here
     # return 'Hello World!'
     return render_template("up.html")
 
