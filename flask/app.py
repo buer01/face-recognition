@@ -3,7 +3,10 @@ import os
 import time
 
 from flask import Flask, request, render_template
-from face_recognition_buer.recognition import rec
+from recognition import rec
+import sys
+print(sys.path)
+
 app = Flask(__name__)
 rec = rec()
 
